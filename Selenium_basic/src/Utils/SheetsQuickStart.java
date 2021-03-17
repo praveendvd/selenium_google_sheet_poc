@@ -70,7 +70,7 @@ public class SheetsQuickStart {
 
 		// https://docs.google.com/spreadsheets/d/[1U97JC0X8F54p9xZ6kMeHSJ4qldyJokf4FZgsJKxHH2E]/edit#gid=0
 
-		final String range = "A1:B4"; // your cell values from A1 to last cell B3
+		final String range = "A1:B4"; // your cell values from A1 to last cell B4
 
 		Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
 				.setApplicationName(APPLICATION_NAME).build();
@@ -82,7 +82,7 @@ public class SheetsQuickStart {
 			int row_index = 0;
 			
 			// new String[Row count][Column count]
-			dataprovider = new String[3][2];
+			dataprovider = new String[4][2];
 			for (List<?> row : values) {
 				// storing first and second column value to the dataprovider
 
