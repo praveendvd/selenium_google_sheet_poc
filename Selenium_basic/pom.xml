@@ -103,7 +103,7 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>src/files/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					<skipTests>true</skipTests>
+					<skipTests>false</skipTests>
 				</configuration>
 			</plugin>
 

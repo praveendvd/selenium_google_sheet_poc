@@ -34,7 +34,7 @@ public class SheetsQuickStart {
 	 * scopes, delete your previously saved tokens/ folder.
 	 */
 	private static final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS_READONLY);
-	private static final String CREDENTIALS_FILE_PATH = "C:\\Users\\credentials.json";
+	private static final String CREDENTIALS_FILE_PATH = "C:\\Users\\Downloads\\credentials.json"; //path to credentials.json
 
 	/**
 	 * Creates an authorized Credential object.
@@ -53,7 +53,7 @@ public class SheetsQuickStart {
 				clientSecrets, SCOPES)
 						.setDataStoreFactory(new FileDataStoreFactory(new java.io.File(TOKENS_DIRECTORY_PATH)))
 						.setAccessType("offline").build();
-		LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).build();
+		LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8889).build();
 		return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
 	}
 
@@ -66,11 +66,11 @@ public class SheetsQuickStart {
 	public void readGoogleSheet() throws IOException, GeneralSecurityException {
 		// Build a new authorized API client service.
 		final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-		final String spreadsheetId = "1U97JC0X8F54p9xZ6kMeHSJ4qldyJHH2E"; // you can get it from the url : [ ]
+		final String spreadsheetId = "1KngPfgUZc5ledKYJz5Tnoh5-p8LAjzGvbnFF-RZiQ"; // you can get it from the url : [ ]
 
 		// https://docs.google.com/spreadsheets/d/[1U97JC0X8F54p9xZ6kMeHSJ4qldyJokf4FZgsJKxHH2E]/edit#gid=0
 
-		final String range = "A1:B3"; // your cell values from A1 to last cell B3
+		final String range = "A1:B4"; // your cell values from A1 to last cell B3
 
 		Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
 				.setApplicationName(APPLICATION_NAME).build();
@@ -80,6 +80,8 @@ public class SheetsQuickStart {
 			System.out.println("No data found.");
 		} else {
 			int row_index = 0;
+			
+			// new String[Row count][Column count]
 			dataprovider = new String[3][2];
 			for (List<?> row : values) {
 				// storing first and second column value to the dataprovider
