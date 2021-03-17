@@ -32,6 +32,10 @@ download and save the client configuration as credential.json
 
 src>util>SheetsQuickStart.java
 
+#Execution
+
+just do mvn test on the pom.xml
+
 # After running the code you will be asked for authorization , click proceed
 
 # Note
