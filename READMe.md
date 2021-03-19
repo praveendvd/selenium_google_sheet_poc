@@ -42,3 +42,5 @@ just do mvn test on the pom.xml
    Delete the Token folder if it has expired token.
 
    if you created web oauth type instead of desktop then Goto https://console.cloud.google.com/ and delete oatuth client and projects and start over again
+
+   you can revoke token by going to : https://myaccount.google.com/permissions
